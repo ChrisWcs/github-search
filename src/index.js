@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+const App = () => {
+
+    const [text, setText] = useState('');
+
+    return (
+        <div>
+            <input value={ text } onChange={(event) => setText(event.target.value)} />
+            <h1>Hello { text }</h1>
+        </div>
+    );
+}
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
